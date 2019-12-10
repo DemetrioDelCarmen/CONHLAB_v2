@@ -46,8 +46,8 @@
                     android:gravity="center">
 
 
-                    <RadioButton
-                        android:id="@+id/rb_lunes"
+                    <CheckBox
+                        android:id="@+id/cb_lunes"
                         style="@style/textDia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -63,8 +63,8 @@
                     android:layout_margin="15dp"
                     android:gravity="center" >
 
-                    <RadioButton
-                        android:id="@+id/rb_martes"
+                    <CheckBox
+                        android:id="@+id/cb_martes"
                         style="@style/textDia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -80,8 +80,8 @@
                     android:layout_margin="15dp"
                     android:gravity="center" >
 
-                    <RadioButton
-                        android:id="@+id/rb_miercoles"
+                    <CheckBox
+                        android:id="@+id/cb_miercoles"
                         style="@style/textDia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -96,8 +96,8 @@
                     android:layout_margin="15dp"
                     android:gravity="center" >
 
-                    <RadioButton
-                        android:id="@+id/rb_jueves"
+                    <CheckBox
+                        android:id="@+id/cb_jueves"
                         style="@style/textDia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -113,8 +113,8 @@
                     android:layout_margin="15dp"
                     android:gravity="center" >
 
-                    <RadioButton
-                        android:id="@+id/rb_viernes"
+                    <CheckBox
+                        android:id="@+id/cb_viernes"
                         style="@style/textDia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
@@ -130,8 +130,8 @@
                     android:layout_margin="15dp"
                     android:gravity="center" >
 
-                    <RadioButton
-                        android:id="@+id/rb_sabado"
+                    <CheckBox
+                        android:id="@+id/cb_sabado"
                         style="@style/textDia"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"

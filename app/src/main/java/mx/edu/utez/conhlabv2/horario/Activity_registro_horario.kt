@@ -3,6 +3,7 @@ package mx.edu.utez.conhlabv2.horario
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.widget.Toast
 import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_registro_horario.*
 import kotlinx.android.synthetic.main.vista_comenzar_registro_horario.*
@@ -16,9 +17,7 @@ class Activity_registro_horario : AppCompatActivity() {
 
 
 
-        btn_registrar_dias.setOnClickListener{
 
-        }
 
 
     }
