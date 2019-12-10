@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:gravity="center_horizontal"
+    android:orientation="vertical">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_margin="15dp"
+        android:gravity="center_horizontal"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/tv_historico_semanal"
+            style="@style/textRelog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/historico"
+            android:textSize="32dp" />
+
+        <TextView
+            android:id="@+id/tv_tipo_busqueda"
+            style="@style/textRelog"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="10dp"
+            android:gravity="center_horizontal"
+            android:text="@string/tv_tipo_consulta"
+            android:textSize="14sp" />
+
+        <Spinner
+            android:id="@+id/spinner_tipo_busqueda"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:id="@+id/btn_consultar_semanas"
+            android:layout_width="230dp"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/button_send_cvs"
+            android:text="Consultar semanas"
+            android:textAllCaps="false"
+            android:textColor="@color/color_send_cvs" />
+
+        <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/rv_historico"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent" />
+
+    </LinearLayout>
+</LinearLayout>

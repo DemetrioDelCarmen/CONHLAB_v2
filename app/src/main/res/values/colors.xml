@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#1B5C91</color>
+    <color name="text_generals">#1B5C91</color>
+    <color name="colorPrimaryDark">#1B5C91</color>
+    <color name="global_color">#1B5C91</color>
+    <color name="blue_global">#1B5C91</color>
+    <color name="color_send_cvs">#fff</color>
+    <color name="dia_no_laboral">#FFFF9800</color>
+</resources>
