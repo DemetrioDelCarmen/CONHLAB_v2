@@ -4,10 +4,7 @@ import android.content.Context
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.widget.ArrayAdapter
-import android.widget.BaseAdapter
-import android.widget.Spinner
-import android.widget.TextView
+import android.widget.*
 import mx.edu.utez.conhlabv2.R
 
 class CustomAdapterHorario(val context: Context, val contenido: ArrayList<String>) : BaseAdapter() {
@@ -40,6 +37,22 @@ class CustomAdapterHorario(val context: Context, val contenido: ArrayList<String
             holder.sp_horas_salida = convertView!!.findViewById(R.id.sp_horas_salida) as Spinner
 
             holder.tv_dia = convertView!!.findViewById(R.id.tv_dia) as TextView
+
+            holder.sp_horas_entrada!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
+                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                }
+
+                override fun onItemSelected(
+                    parent: AdapterView<*>?,
+                    view: View?,
+                    position: Int,
+                    id: Long
+                ) {
+
+                }
+
+            }
 
             convertView.tag = holder
 

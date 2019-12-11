@@ -27,6 +27,7 @@
                     style="@style/textRelog"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
+                    android:gravity="center_horizontal"
                     android:text="@string/agrega_horas"
                     android:textSize="32dp" />
             </LinearLayout>
@@ -46,7 +47,7 @@
                 android:orientation="vertical">
 
                 <Button
-                    android:id="@+id/button2"
+                    android:id="@+id/btn_registrar_horario"
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_send_cvs"
