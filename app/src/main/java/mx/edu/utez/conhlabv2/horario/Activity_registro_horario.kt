@@ -3,10 +3,7 @@ package mx.edu.utez.conhlabv2.horario
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import android.widget.Toast
-import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_registro_horario.*
-import kotlinx.android.synthetic.main.vista_comenzar_registro_horario.*
 import mx.edu.utez.conhlabv2.R
 
 class Activity_registro_horario : AppCompatActivity() {
@@ -16,6 +13,9 @@ class Activity_registro_horario : AppCompatActivity() {
         setContentView(R.layout.activity_registro_horario)
 
 
+        btn_registrar_dias.setOnClickListener {
+            registrarDias()
+        }
 
 
 
@@ -23,11 +23,32 @@ class Activity_registro_horario : AppCompatActivity() {
     }
 
 
-
-
     fun registrarDias(){
+        var arregloDias = arrayListOf<String>()
+        if(cb_lunes.isChecked){
+            arregloDias.add(resources.getString(R.string.lunes))
+        }
+        if(cb_martes.isChecked){
+            arregloDias.add(resources.getString(R.string.martes))
+        }
+        if(cb_miercoles.isChecked){
+            arregloDias.add(resources.getString(R.string.miercoles))
+        }
+        if(cb_jueves.isChecked){
+            arregloDias.add(resources.getString(R.string.jueves))
+        }
+        if(cb_viernes.isChecked){
+            arregloDias.add(resources.getString(R.string.viernes))
+        }
+        if(cb_sabado.isChecked){
+            arregloDias.add(resources.getString(R.string.sabado))
+        }
 
-        Toasty.success(this,"Registrar días", Toasty.LENGTH_SHORT).show()
+
+
+        val intent = Intent(this@Activity_registro_horario, Activity_horarios_para_registrar::class.java)
+        intent.putStringArrayListExtra("arregloDias", arregloDias)
+        startActivity(intent)
     }
 
 
