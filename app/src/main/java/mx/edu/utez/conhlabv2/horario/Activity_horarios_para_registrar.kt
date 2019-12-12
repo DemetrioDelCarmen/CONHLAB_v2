@@ -1,8 +1,10 @@
 package mx.edu.utez.conhlabv2.horario
 
+import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.Spinner
+import es.dmoral.toasty.Toasty
 import kotlinx.android.synthetic.main.activity_horarios_para_registrar.*
 import mx.edu.utez.conhlabv2.R
 
@@ -22,15 +24,17 @@ class Activity_horarios_para_registrar : AppCompatActivity() {
 
 
 
-        val sp_horas_entrada =  findViewById<Spinner>(R.id.sp_horas_entrada)
+
         btn_registrar_horario.setOnClickListener {
 
+            val sharedPreferences = getSharedPreferences("archivo",Context.MODE_PRIVATE)
 
-            for (e in arregloDias.iterator()) println(e)
-            var it = arregloDias.iterator()
-            while (it.hasNext()) {
-                var e = it.next()
-                println(sp_horas_entrada.)
+
+            for(i in arregloDias){
+                val entrada = sharedPreferences.getString("${i}_E","#")
+                val salida = sharedPreferences.getString("${i}_S","#")
+
+                Toasty.success(this,"$i de $entrada a $salida",Toasty.LENGTH_LONG).show()
             }
 
         }

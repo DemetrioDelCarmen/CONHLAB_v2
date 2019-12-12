@@ -1,6 +1,7 @@
 package mx.edu.utez.conhlabv2.horario
 
 import android.content.Context
+import android.content.SharedPreferences
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,18 +13,20 @@ class CustomAdapterHorario(val context: Context, val contenido: ArrayList<String
 
     val arreglo = arrayListOf<String>("1", "2", "3")
 
-    inner class ViewHolder {
 
+    var sharedPreferences = context.getSharedPreferences("archivo", Context.MODE_PRIVATE)
+
+    inner class ViewHolder {
         var sp_horas_entrada: Spinner? = null
         var sp_horas_salida: Spinner? = null
         var tv_dia: TextView? = null
-
-
     }
 
 
-    override fun getView(position: Int, p1: View?, p2: ViewGroup?): View {
 
+
+
+    override fun getView(position: Int, p1: View?, p2: ViewGroup?): View {
         var convertView = p1
         val holder: ViewHolder
         if (convertView == null) {
@@ -38,21 +41,56 @@ class CustomAdapterHorario(val context: Context, val contenido: ArrayList<String
 
             holder.tv_dia = convertView!!.findViewById(R.id.tv_dia) as TextView
 
-            holder.sp_horas_entrada!!.onItemSelectedListener = object : AdapterView.OnItemSelectedListener {
-                override fun onNothingSelected(parent: AdapterView<*>?) {
+
+
+            holder.sp_horas_entrada!!.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                    }
+
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position2: Int,
+                        id: Long
+                    ) {
+
+                        with(sharedPreferences.edit()) {
+                            putString(contenido[position]+"_E", arreglo[position2])
+                            putInt(contenido[position]+"_I_E", position2)
+                            commit()
+                        }
+
+                    }
 
                 }
 
-                override fun onItemSelected(
-                    parent: AdapterView<*>?,
-                    view: View?,
-                    position: Int,
-                    id: Long
-                ) {
+
+            holder.sp_horas_salida!!.onItemSelectedListener =
+                object : AdapterView.OnItemSelectedListener {
+                    override fun onNothingSelected(parent: AdapterView<*>?) {
+
+                    }
+
+                    override fun onItemSelected(
+                        parent: AdapterView<*>?,
+                        view: View?,
+                        position2: Int,
+                        id: Long
+                    ) {
+
+                        with(sharedPreferences.edit()) {
+                            putString(contenido[position]+"_S", arreglo[position2])
+                            commit()
+                        }
+
+
+
+                    }
 
                 }
 
-            }
 
             convertView.tag = holder
 
@@ -61,10 +99,11 @@ class CustomAdapterHorario(val context: Context, val contenido: ArrayList<String
 
 
             holder = convertView.tag as ViewHolder
-
-
         }
-
+        holder!!.sp_horas_entrada!!.setSelection(
+            (sharedPreferences
+                .getInt(contenido[position]+"_I_E", 2))
+        )
 
         holder.tv_dia!!.text = contenido[position]
         holder.sp_horas_entrada!!.adapter =
