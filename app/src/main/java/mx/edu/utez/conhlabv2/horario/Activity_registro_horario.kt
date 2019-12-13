@@ -15,6 +15,7 @@ class Activity_registro_horario : AppCompatActivity() {
 
         btn_registrar_dias.setOnClickListener {
             registrarDias()
+
         }
 
 
@@ -49,7 +50,9 @@ class Activity_registro_horario : AppCompatActivity() {
         val intent = Intent(this@Activity_registro_horario, Activity_horarios_para_registrar::class.java)
         intent.putStringArrayListExtra("arregloDias", arregloDias)
         startActivity(intent)
+
     }
+
 
 
 

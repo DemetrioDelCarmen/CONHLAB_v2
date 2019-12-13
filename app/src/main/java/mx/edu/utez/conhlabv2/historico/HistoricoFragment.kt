@@ -24,6 +24,8 @@ class HistoricoFragment : Fragment() {
     ): View? {
 
 
+        val view = inflater.inflate(R.layout.fragment_historico_cuatrimestral,container,false)
+
         var spinner = view!!.findViewById<Spinner>(R.id.spinner_tipo_busqueda)
 
         var consultas = arrayOf<String>("Semanal", "Mensual")
