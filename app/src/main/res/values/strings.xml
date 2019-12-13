@@ -101,6 +101,7 @@
     <string name="confirmar_dias_laborales">Confirme la siguiente información laboral</string>
     <string name="confirmar">Confirmar registro</string>
     <string name="agrega_horas">Ahora, registre horas</string>
+    <string name="registrar_horario">Registrar horario</string>
 
 
 </resources>

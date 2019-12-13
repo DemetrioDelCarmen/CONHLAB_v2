@@ -51,7 +51,7 @@
                     android:layout_width="300dp"
                     android:layout_height="wrap_content"
                     android:background="@drawable/button_send_cvs"
-                    android:text="Button"
+                    android:text="@string/registrar_horario"
                     android:textAllCaps="false"
                     android:textColor="@color/color_send_cvs" />
             </LinearLayout>
